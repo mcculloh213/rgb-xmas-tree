@@ -1,0 +1,14 @@
+[Unit]
+Description=Daemon for 3D RGB Xmas Tree
+After=network.target
+After=syslog.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/tree
+ExecStart=/usr/bin/python3 tree
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

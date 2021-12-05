@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn Daemon for 3D RGB Xmas Tree
+After=network.target
+After=syslog.target
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/tree
+ExecStart=/home/pi/.local/bin/gunicorn --workers 4 --bind 0.0.0.0:8000 app:app --access-logfile /home/pi/xmas/log/access.log --error-logfile /home/pi/xmas/log/error.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
