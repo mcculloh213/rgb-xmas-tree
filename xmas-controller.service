@@ -7,7 +7,7 @@ After=syslog.target
 User=pi
 Group=pi
 WorkingDirectory=/home/pi/tree
-ExecStart=/home/pi/.local/bin/gunicorn --workers 4 --bind 0.0.0.0:8000 app:app --access-logfile /home/pi/xmas/log/access.log --error-logfile /home/pi/xmas/log/error.log
+ExecStart=/home/pi/.local/bin/gunicorn --workers 4 --bind 0.0.0.0:8000 app:app
 Restart=on-failure
 
 [Install]
